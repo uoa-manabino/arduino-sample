@@ -1,3 +1,5 @@
+#include <Servo.h>
+
 #define echoPin_in 2 // Echo Pin sensor_in
 #define trigPin_in 3 // Trigger Pin sensor_in
 #define echoPin_out 2 // Echo Pin sensor_out
@@ -104,4 +106,25 @@ int switching(){
     corrent = 0:
   }
   return current;
+}
+
+
+static Servo servo;
+static int pinNum = 0;
+static int currentState = 0;
+void switchInit(const int pin, const int state) {
+  currentState = state;
+  pinNum = pin;
+
+  servo.attach(pinNum);
+  (currentState == 0) ? switchOn(0) : switchOff(0);
+}
+
+
+void switchOn(const int offset) {
+  servo.write((75 + offset)); 
+}
+
+void switchOff(const int offset) {
+  servo.write((105 + offset)); 
 }
