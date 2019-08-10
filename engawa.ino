@@ -68,8 +68,8 @@ int ultrassonic(){
       if(getDistance(2) > SHIKIITI){
         while(1){
           if(senfor_in < SHIKIITI){
-            menber--:
-            return memher; 
+            member--:
+            return member; 
           }else if(getDistance(2) < SHIKIITI) return member;
         }
       }
@@ -80,8 +80,8 @@ int ultrassonic(){
       if(getDistance(1) > SHIKIITI){
         while(1){
           if(senfor_out < SHIKIITI){
-            menber++:
-            return memher; 
+            member++:
+            return member; 
           }else if(getDistance(1) < SHIKIITI) return member;
         }
       }
@@ -98,12 +98,12 @@ int switching(){
   if(flg == 1 && corrent == 0){
     if(bright < AKARUSA){
       servo.switchOn();
-      corrent = 1;
+      current = 1;
     }
   }
   if(flg == 0 && corrent == 1){
     servo.switchOff();
-    corrent = 0:
+    current = 0:
   }
   return current;
 }
